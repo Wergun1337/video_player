@@ -64,7 +64,7 @@ export default defineConfig({
   resolve: {
     alias: [{
       find: '@/',
-      replacement: path.resolve('src') + '/'
+      replacement: path.resolve('src') + '/',
     }],
   },
   css: {
@@ -77,9 +77,10 @@ export default defineConfig({
     },
     preprocessorOptions: {
       scss: {
-        additionalData:`
-        @use '@/styles/helpers' as *;
-        `
+        additionalData: `
+          @use '@/styles/helpers' as *;
+        `,
+        silenceDeprecations: ['legacy-js-api'],
       },
       less: {},
       stylus: {},
